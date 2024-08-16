@@ -1,11 +1,8 @@
-
+import os
 import telebot
 
-# Ваш токен, полученный от BotFather
-TOKEN = '7254319323:AAGu_wTsQoA5xLvqto6RewJqfSwlku-zdo4'
-
+TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(TOKEN)
-
 
 @bot.message_handler(commands=['version'])
 def send_version(message):
