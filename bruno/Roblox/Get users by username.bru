@@ -1,0 +1,20 @@
+meta {
+  name: Get users by username
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://users.roblox.com/v1/usernames/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "usernames": [
+      "AgniyaKap"
+    ],
+    "excludeBannedUsers": true
+  }
+}

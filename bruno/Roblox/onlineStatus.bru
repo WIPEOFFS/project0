@@ -1,0 +1,19 @@
+meta {
+  name: onlineStatus
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://presence.roblox.com/v1/presence/last-online
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userIds": [
+      {{agniya}}
+    ]
+  }
+}
