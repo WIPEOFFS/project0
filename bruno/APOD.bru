@@ -1,0 +1,15 @@
+meta {
+  name: APOD
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api.nasa.gov/planetary/apod?api_key={{token}}
+  body: none
+  auth: none
+}
+
+params:query {
+  api_key: {{token}}
+}
