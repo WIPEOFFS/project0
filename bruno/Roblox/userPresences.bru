@@ -1,0 +1,19 @@
+meta {
+  name: userPresences
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://presence.roblox.com/v1/presence/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userIds": [
+      {{agniya}}
+    ]
+  }
+}

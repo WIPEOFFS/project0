@@ -1,0 +1,15 @@
+meta {
+  name: Get all friends
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://friends.roblox.com/v1/users/{{agniya}}/friends
+  body: none
+  auth: none
+}
+
+headers {
+  accept: application/json
+}
