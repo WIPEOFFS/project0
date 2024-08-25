@@ -1,7 +1,7 @@
 import os
 import requests
 
-from demoProject.logger_setup import setup_logger
+from logger_setup import setup_logger
 
 logger = setup_logger('nasa_api_logger')
 
