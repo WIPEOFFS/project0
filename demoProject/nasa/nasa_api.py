@@ -1,7 +1,7 @@
 import os
 import requests
 
-from demoProject.logger_setup import setup_logger
+from logger_setup import setup_logger
 
 logger = setup_logger('nasa_api_logger')
 
@@ -20,14 +20,10 @@ def fetch_nasa_apod():
         image_url = data.get('url')
         hd_image_url = data.get('hdurl')
 
-        print(f"Explanation: {explanation}")
-        print(f"URL: {image_url}")
-        print(f"HD URL: {hd_image_url}")
 
         logger.info("Данные успешно получены из NASA.")
     except requests.exceptions.RequestException as e:
         logger.error(f"Ошибка при вызове NASA API: {e}")
-        print(f"Произошла ошибка: {e}")
 
 
 if __name__ == '__main__':
