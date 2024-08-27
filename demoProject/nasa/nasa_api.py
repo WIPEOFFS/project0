@@ -10,7 +10,9 @@ def fetch_nasa_apod():
     logger.info("Начинается вызов API NASA.")
     api_key = os.getenv('NASA_API_KEY', 'DEMO_KEY')
     url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
-
+    if not api_key:
+        logger.error("NASA_API_KEY is not set. Please set the NASA_API_KEY environment variable.")
+        raise ValueError("NASA_API_KEY is not set. Please set the NASA_API_KEY environment variable.")
     try:
         response = requests.get(url)
         response.raise_for_status()
