@@ -22,11 +22,8 @@ def fetch_nasa_apod():
         image_url = data.get('url')
         hd_image_url = data.get('hdurl')
 
-
         logger.info("Данные успешно получены из NASA.")
+        return explanation, image_url, hd_image_url
     except requests.exceptions.RequestException as e:
         logger.error(f"Ошибка при вызове NASA API: {e}")
-
-
-if __name__ == '__main__':
-    fetch_nasa_apod()
+        return f"Ошибка при вызове NASA API: {e}"
