@@ -1,0 +1,29 @@
+meta {
+  name: getToken
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{authUrl}}
+  body: formUrlEncoded
+  auth: basic
+}
+
+headers {
+  RqUID: 6f0b1291-c7f3-43c6-bb2e-9f3efb2dc98e
+  Content-Type: application/x-www-form-urlencoded
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:form-urlencoded {
+  scope: {{scope}}
+}
+
+script:post-response {
+  bru.setEnvVar("access_token",res.body.access_token);
+}

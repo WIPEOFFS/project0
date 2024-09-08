@@ -1,0 +1,31 @@
+meta {
+  name: exampleRequest
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/chat/completions
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "model": "GigaChat",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Переведи текст на русский - What if Saturn disappeared?  Sometimes, it does.  It doesn't really go away, though, it just disappears from view when our Moon moves in front."
+      }
+    ],
+    "stream": false,
+    "repetition_penalty": 1
+  }
+}
